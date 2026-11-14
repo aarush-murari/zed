@@ -1,0 +1,175 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cli_default_open_behavior": "existing_window",
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "hide_mouse": "on_typing",
+  "helix_mode": false,
+  "confirm_quit": true,
+  "base_keymap": "VSCode",
+  "ssh_connections": [
+    {
+      "host": "127.0.0.1",
+      "username": "aarush",
+      "projects": [],
+      "nickname": "Localhost"
+    }
+  ],
+  "agent": {
+    "dock": "right",
+    "play_sound_when_agent_done": true,
+    "default_profile": "ask",
+    "profiles": {
+      "django": {
+        "name": "Django",
+        "tools": {
+          "list_directory": true,
+          "copy_path": false,
+          "create_directory": false,
+          "fetch": true,
+          "find_path": true,
+          "grep": true,
+          "project_notifications": true,
+          "now": false,
+          "open": true,
+          "terminal": true,
+          "read_file": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "default_model": {
+      "provider": "llama.cpp",
+      "model": "SmolLM3-3B"
+    },
+    "inline_assistant_model": {
+      "provider": "ollama",
+      "model": "granite3.3:2b",
+      "prompt": "You are Qwen2.5 Coder 1.5 billion parameters.",
+      "stream": true
+    }
+  },
+  "language_models": {
+    "openai_compatible": {
+      "llama.cpp": {
+        "api_url": "http://localhost:8080/v1",
+        "available_models": [
+          {
+            "name": "SmolLM3-3B",
+            "max_tokens": 10240,
+            "max_output_tokens": 10240,
+            "max_completion_tokens": 10240,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false
+            }
+          }
+        ]
+      }
+    },
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "qwen2.5-coder:0.5b",
+          "display_name": "qwen 2.5 coder .5B",
+          "max_tokens": 32768,
+          "supports_tools": true,
+          "supports_thinking": false,
+          "supports_images": false
+        }
+      ]
+    }
+  },
+  "context_servers": {
+    "searxng": {
+      "enabled": true,
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-searxng"
+      ],
+      "env": {
+        "SEARXNG_URL": "http://localhost:80"
+      }
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "buffer_font_family": "Terminess Nerd Font",
+  "ui_font_family": ".ZedMono",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "Xcode Default Darker"
+  },
+  "remove_trailing_whitespace_on_save": false,
+  "ensure_final_newline_on_save": false,
+  "terminal": {
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [".env", "env", ".venv", "venv"],
+        // Can also be `csh`, `fish`, and `nushell`
+        "activate_script": "default"
+      }
+    }
+  },
+  "languages": {
+    "Java": {
+      "format_on_save": "on"
+    },
+    "Python": {
+      "language_servers": [
+        // Disable basedpyright and enable Ty, and otherwise
+        // use the default configuration.
+        "ty",
+        "basedpyright",
+        "pyright",
+        "pylsp"
+      ]
+    }
+  }
+}
